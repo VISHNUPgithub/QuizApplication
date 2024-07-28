@@ -34,7 +34,11 @@
             <h1>Congratulations! ${userName}</h1>
             <p>You have completed the quiz.</p>
             <p>Your score is: <strong>${mark}</strong></p>
+<<<<<<< HEAD
             <a href="/viewAllQuiz?userName=${userName }" class="btn btn-primary">Start a New Quiz</a>
+=======
+            <a href="/viewAllQuiz" class="btn btn-primary">Start a New Quiz</a>
+>>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
