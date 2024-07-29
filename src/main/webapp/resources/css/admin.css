@@ -1,0 +1,55 @@
+.navbar {
+	margin-top: 10px;
+	margin-bottom: 60px;
+	border-radius: 15px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1), 0 -1px 10px
+		rgba(0, 0, 0, 0.1);
+	height: 40px;
+}
+
+.container {
+	margin-top: 30px;
+}
+
+.btn-primary {
+	display: block;
+	margin: 10px auto;
+	width: 100%;
+}
+
+.form-container {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.aside {
+	background: #f8f9fa;
+	padding: 20px;
+	border-right: 1px solid #ddd;
+}
+
+.main-content {
+	padding: 20px;
+}
+
+.row {
+	display: flex;
+}
+
+.question-label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #007bff;
+}
+
+.option-label, .answer-label, .category-label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #28a745;
+}
+
+.category-label {
+	color: #17a2b8;
+}

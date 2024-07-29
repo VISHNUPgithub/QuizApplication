@@ -1,21 +1,11 @@
 package com.project.QuizApp.service;
 
-<<<<<<< HEAD
 
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-=======
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 import com.project.QuizApp.Repo.QuestionRepo;
 import com.project.QuizApp.Repo.QuizRepo;
 import com.project.QuizApp.model.Question;
@@ -49,21 +39,15 @@ public class QuestionService {
 	}
 
 	public void addQuestion(Question question) {
-<<<<<<< HEAD
 		question.setCategory(question.getCategory().toLowerCase());
 		System.out.println(question.getqId());
-=======
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 		questionRepo.save(question);
 
 	}
 
-<<<<<<< HEAD
 	public Question viewSingleQuestion(Integer id){
 		Question question = questionRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid question Id:" + id));
 		return question;
 	}
 
-=======
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 }

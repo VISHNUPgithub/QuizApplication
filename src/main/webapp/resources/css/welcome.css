@@ -1,0 +1,39 @@
+.navbar {
+	margin-top: 10px;
+	margin-bottom: 60px;
+	border-radius: 15px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1), 0 -1px 10px
+		rgba(0, 0, 0, 0.1);
+	height: 40px;
+}
+
+.welcome-message {
+	margin: 30px 0;
+	text-align: center;
+}
+
+.form-container {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.form-container h1 {
+	text-align: center;
+}
+
+.form-container label {
+	font-weight: bold;
+}
+
+.quote {
+	font-style: italic;
+	font-size: 1.2em;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.btn-primary {
+	display: block;
+	margin: 0 auto;
+	width: 35%;
+}

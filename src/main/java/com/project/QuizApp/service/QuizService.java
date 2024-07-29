@@ -30,24 +30,15 @@ public class QuizService {
 	JdbcTemplate jdbcTemplate;
 	@Autowired
 	QuestionRepo questionRepo;
-<<<<<<< HEAD
 	
 	public void createQuiz(String Category, String title, Integer numQ){
 		String category=Category.toLowerCase();
-=======
-	public ResponseEntity<String> createQuiz(String category, String title, Integer numQ){
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 		Quiz quiz=new Quiz();
 		List<Question> question=questionRepo.getQuestions(category,numQ);
 		quiz.setQuestion(question);
 		quiz.setqTitle(title);
 		quiz.setCategory(category);
 		quizRepo.save(quiz);
-<<<<<<< HEAD
-=======
-		return new ResponseEntity<>("success",HttpStatus.CREATED);
-		
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 	}
 	public List<QuestionWrapper> findQuiz(Integer id) {
 		List<QuestionWrapper> questionWrappers = new ArrayList<>();
@@ -89,7 +80,6 @@ public class QuizService {
 	}
 	public Integer adminLogin(String adminUserName, String adminPassword) {
 		String query = "SELECT EXISTS (SELECT * FROM quiz.admin_detail WHERE admin_password = ? AND admin_username= ?)";
-<<<<<<< HEAD
 		return jdbcTemplate.queryForObject(query, Integer.class, adminUserName, adminPassword);
 	}
 	 public UserSubmission createUserSubmission(String userName, int mark, List<Response> responses) {
@@ -116,12 +106,4 @@ public class QuizService {
 
 	        return userSubmission;
 	    }
-=======
-		
-		return jdbcTemplate.queryForObject(query, Integer.class, adminUserName, adminPassword);
-	}
-	
-	
-	
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 }

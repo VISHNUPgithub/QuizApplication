@@ -6,41 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Quiz Challenge</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .navbar {
-            margin-top:10px;
-            margin-bottom: 60px;
-            border-radius: 15px; 
-   		    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1),0 -1px 10px rgba(0, 0, 0, 0.1);
-   		    height: 40px;
-        }
-        .welcome-message {
-            margin: 30px 0;
-            text-align: center;
-        }
-        .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .form-container h1{
-        	text-align: center; 
-        }
-        .form-container label {
-    		font-weight: bold;
-		}
-        
-        .quote {
-            font-style: italic;
-            font-size: 1.2em;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .btn-primary {
-            display: block;
-            margin: 0 auto;
-            width: 35%;
-        }
-    </style>
+     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/welcome.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -93,9 +59,5 @@
             </div>
         </div>
     <% } %>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

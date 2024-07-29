@@ -8,48 +8,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz Page</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
-body {
-	background-color: #f8f9fa;
-}
-
-.container {
-	margin-top: 50px;
-}
-
-.quiz-section {
-	background-color: #ffffff;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-}
-
-.quiz-section h3 {
-	margin-bottom: 20px;
-}
-
-.form-check {
-	margin-bottom: 15px;
-}
-
-.form-check-input {
-	margin-right: 10px;
-}
-.btn-submit {
-	background-color: #007bff;
-	border-color: #007bff;
-	width: 100px;
-	height: 40px;
-	display: block;
-	margin: 20px auto;
-}
-.btn-submit:hover {
-	background-color: #0056b3;
-	border-color: #0056b3;
-}
-</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/QuizPage.css">
 </head>
 <body>
 	<div class="container">
@@ -85,17 +45,8 @@ body {
 					</div>
 				</div>
 			</c:forEach>
-			
-			
-			
-			
 			<button type="submit" class="btn btn-primary btn-submit">Submit</button>
 		</form>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

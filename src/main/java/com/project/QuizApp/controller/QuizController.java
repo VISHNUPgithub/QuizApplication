@@ -1,17 +1,9 @@
 package com.project.QuizApp.controller;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
-=======
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,10 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.project.QuizApp.model.*;
 import com.project.QuizApp.service.*;
-<<<<<<< HEAD
-=======
-
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -62,7 +50,6 @@ public class QuizController {
 	}
 	 @PostMapping("/result/{id}")
 	 public String QuizCalculation(@PathVariable Integer id,@RequestParam Map<String, String> map,Model model,HttpSession session) {
-<<<<<<< HEAD
 		 List<Response> responses = new ArrayList<>();
 		    for (Map.Entry<String, String> entry : map.entrySet()) {
 		        Response response = new Response();
@@ -77,50 +64,12 @@ public class QuizController {
 		    session.setAttribute("TotalNumberOfAttemptedQuestions", responses.size());
 		    quizService.submissionSaving(userSubmission);
 		    return "result";
-=======
-		 List<Response> response = new ArrayList<>();
-		// List<UserSubmission> submission = new ArrayList<>();
-		 for ( Map.Entry<String, String> m  : map.entrySet()) {
-			Response res = new Response();
-			res.setQid(Integer.parseInt(m.getKey()));
-			res.setResult(m.getValue());
-			response.add(res);
-		}
-		 int count= response.size();
-		 int mark=quizService.markCalculation(id,response);
-		 model.addAttribute("mark",mark);
-		 model.addAttribute("userName", session.getAttribute("userName"));
-		 UserSubmission Usub = new UserSubmission();
-		 StringBuilder questionId = new StringBuilder();
-		 StringBuilder submission = new StringBuilder();
-		 int index=0;
-		 for (Response r : response) {
-			 index++;
-			 questionId.append(r.getQid());
-			 submission.append(r.getResult());
-			 if (index<count) {
-				 questionId.append(",");
-				 submission.append(",");
-			}
-		 }
-		 session.setAttribute("TotalNumberOfAttemptedQuestions", count);
-		 Usub.setUserName((String)session.getAttribute("userName"));
-		 Usub.setMark(mark);
-		 Usub.setQuestionId(questionId.toString());
-		 Usub.setSubmission(submission.toString());
-		 quizService.submissionSaving(Usub);
-		return "result";
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 	}
 	 @PostMapping("/adminLogin")
 	 public String AdminLogin(@RequestParam("adminUserName") String adminUserName,@RequestParam("adminPassword") String adminPassword,Model model) {
 		if (quizService.adminLogin(adminUserName,adminPassword)!=0) {
 			return "admin";
-<<<<<<< HEAD
 		}
-=======
-		} 
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 		return admin(model);
 	}
 	 @GetMapping("/adminPanel")
@@ -131,7 +80,6 @@ public class QuizController {
 		}else if (adminSection.equals("addNewQuestion")) {
 		
 		}else if (adminSection.equals("viewSubmissions")) {
-<<<<<<< HEAD
 			List<UserSubmission>userSubmissions=userSubmissionService.viewSubmissions();
 			for (UserSubmission userSubmission : userSubmissions) {
 				System.out.println(userSubmission);
@@ -140,25 +88,6 @@ public class QuizController {
 			model.addAttribute("mappedSubmission",submissionMap);
 		}else if (adminSection.equals("addQuiz")) {
 			
-=======
-			System.out.println("test 1");
-			List<UserSubmission>userSubmissions=userSubmissionService.viewSubmissions();
-			Map<UserSubmission,List<Question>> submissionMap=userSubmissionService.mappingOfUserSubmissionList(userSubmissions);
-			List<String[]> list = new ArrayList<>();
-			for (UserSubmission userSubmission : userSubmissions) {
-				String[] string=userSubmission.getSubmission().split(",");
-				list.add(string);
-			}
-			
-			for (String[] strings : list) {
-				for (String s : strings) {
-					System.out.println(s);
-				}
-			}
-			model.addAttribute("list", list);
-			model.addAttribute("mappedSubmission",submissionMap);
-			model.addAttribute("submissions", userSubmissions);
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 		}
 		 model.addAttribute("adminSection", adminSection);
 		 
@@ -172,7 +101,6 @@ public class QuizController {
 	}
 	 @PostMapping("/addQuestion")
 	 public String addQuestion(@ModelAttribute Question question, Model model) {
-<<<<<<< HEAD
 		 System.out.println("add question received");
 		 System.out.println(question.getCategory());
 		 System.out.println(question.getqId());
@@ -195,9 +123,4 @@ public class QuizController {
 		return "admin";
 	}
 
-=======
-		questionService.addQuestion(question);
-		return viewAllQuestion("viewQuestions", model);
-	}
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 }

@@ -1,11 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<<<<<<< HEAD
-=======
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
-
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,66 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-<<<<<<< HEAD
-        .navbar { margin-top: 10px; margin-bottom: 60px; border-radius: 15px; box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.1); height: 40px; }
-        .container { margin-top: 30px; }
-        .btn-primary { display: block; margin: 10px auto; width: 100%; }
-        .form-container { max-width: 600px; margin: 0 auto; }
-        .aside { background: #f8f9fa; padding: 20px; border-right: 1px solid #ddd; }
-        .main-content { padding: 20px; }
-        .row { display: flex; }
-        .question-label { display: block; margin-bottom: 5px; font-weight: bold; color: #007bff; }
-        .option-label, .answer-label, .category-label { display: block; margin-bottom: 5px; font-weight: bold; color: #28a745; }
-        .category-label { color: #17a2b8; }
-=======
-        .navbar {
-            margin-top: 10px;
-            margin-bottom: 60px;
-            border-radius: 15px;
-            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.1);
-            height: 40px;
-        }
-        .container {
-            margin-top: 30px;
-        }
-        .btn-primary {
-            display: block;
-            margin: 10px auto;
-            width: 100%;
-        }
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .aside {
-            background: #f8f9fa;
-            padding: 20px;
-            border-right: 1px solid #ddd;
-        }
-        .main-content {
-            padding: 20px;
-        }
-        .row {
-            display: flex;
-        }
-        .question-label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #007bff;
-        }
-        .option-label, .answer-label, .category-label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #28a745;
-        }
-        .category-label {
-            color: #17a2b8;
-        }
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -95,10 +30,7 @@
                     <button type="submit" name="adminSection" value="viewQuestions" class="btn btn-primary">View Questions</button>
                     <button type="submit" name="adminSection" value="addNewQuestion" class="btn btn-primary">Add New Question</button>
                     <button type="submit" name="adminSection" value="viewSubmissions" class="btn btn-primary">View Submissions</button>
-<<<<<<< HEAD
                     <button type="submit" name="adminSection" value="addQuiz" class="btn btn-primary">Create New Quiz</button>
-=======
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
                 </form>
             </div>
             <div class="col-md-9 main-content">
@@ -106,10 +38,6 @@
                     String adminSection = (String) request.getAttribute("adminSection");
                 %>
                 
-<<<<<<< HEAD
-=======
-                <!-- View Questions Section -->
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
                 <% if ("viewQuestions".equals(adminSection)) { %>
                     <h2>View Questions</h2>
                     <form action="/deleteQuestion" method="post">
@@ -153,7 +81,6 @@
                             <button type="submit" class="btn btn-primary btn-block">Add Question</button>
                         </form>
                     </div>
-<<<<<<< HEAD
                 <% } else if ("viewSubmissions".equals(adminSection)) { %>
                     <h2>All User Submissions</h2>
                     <c:forEach var="submissionEntry" items="${mappedSubmission}">
@@ -229,54 +156,8 @@
     </div>
              
                 <%} %>
-=======
-       <% }if ("viewSubmissions".equals(adminSection)) { %>
-    <h2>All User Submissions</h2>
-
-    <c:forEach var="submissionEntry" items="${mappedSubmission}">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3>User: ${submissionEntry.key.userName}</h3>
-                <p>Mark: ${submissionEntry.key.mark}</p>
-            </div>
-            <div class="panel-body">
-                <p>Questions and Answers:</p>
-                <ul>
-                    <c:forEach var="question" items="${submissionEntry.value}" varStatus="status">
-                        <li>
-                            <p><strong>Question:</strong> ${question.qTitle}</p>
-                            <p><strong>Option 1:</strong> ${question.option1}</p>
-                            <p><strong>Option 2:</strong> ${question.option2}</p>
-                            <p><strong>Option 3:</strong> ${question.option3}</p>
-                            <p><strong>Option 4:</strong> ${question.option4}</p>
-                            <p><strong>Right Answer:</strong> ${question.rightAnswer}</p>
-                            <p><strong>Category:</strong> ${question.category}</p>
-
-                            <p><strong>Selected Answer:</strong>
-                                <c:choose>
-                                    <c:when test="${status.index < fn:length(list)}">
-                                        <c:out value="${list[status.index][0]}"/>
-                                    </c:when>
-                                    <c:otherwise>
-                                        Not answered
-                                    </c:otherwise>
-                                </c:choose>
-                            </p>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </div>
-    </c:forEach>
-<% } %>
-
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

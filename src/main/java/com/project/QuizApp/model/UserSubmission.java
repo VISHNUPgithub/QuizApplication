@@ -41,17 +41,10 @@ public class UserSubmission implements Serializable{
 		this.submission = submission;
 	}
 	public int getMark() {
-<<<<<<< HEAD
 		return mark;
 	}
 	public void setMark(int mark) {
 		this.mark = mark;
-=======
-		return id;
-	}
-	public void setMark(int id) {
-		this.id = id;
->>>>>>> 027fcfc66e551ae4950edf11908efa89e17dc2d8
 	}
 	public UserSubmission(int id, String questionId, String userName, String submission, int mark) {
 		super();

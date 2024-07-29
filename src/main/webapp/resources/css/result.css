@@ -1,0 +1,23 @@
+body {
+	background-color: #f8f9fa;
+}
+
+.result-container {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.result-card {
+	background-color: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+
+.result-card h1 {
+	margin-bottom: 20px;
+}
+
+.result-card p {
+	font-size: 1.25rem;
+}
